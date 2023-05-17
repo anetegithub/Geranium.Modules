@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Geranium.Modules.CastleWindsor\Geranium.Modules.CastleWindsor.csproj" />
+    <ProjectReference Include="..\Geranium.Modules\Geranium.Modules.csproj" />
+  </ItemGroup>
+
+</Project>

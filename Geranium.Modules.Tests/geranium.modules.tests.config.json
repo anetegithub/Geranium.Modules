@@ -1,0 +1,9 @@
+{
+  "Debug": true,
+  "Modules": {
+    "ModuleConfigured.ModuleConfig": {
+      "String": "str",
+      "Int": 5
+    }
+  }
+}
