@@ -25,7 +25,7 @@ namespace Geranium.Modules.DefaultFunctions
         public static void InstallModules(ModuleInfo[] moduleInfos, IServiceBridge services, ConfigurationProviderFunc cfg, IStringLocalizer<ModuleInstallingLoggerMessages> localizer)
         {
             var msgs = LocalizedMessages(localizer);
-            var logger = services.ResolveService<ILogger<IModule>>();
+            //var logger = services.ResolveService<ILogger<IModule>>();
 
             var modules = RegisterModules(moduleInfos, services, cfg);
 
@@ -53,7 +53,7 @@ namespace Geranium.Modules.DefaultFunctions
                 var dependenciesLoaded = module.Dependencies.IsEmpty() || module.Dependencies.All(installed.ContainsKey);
                 if (dependenciesLoaded)
                 {
-                    logger?.LogDebug($"{msgs.Installing}: {module.GetType()}");
+                    //logger?.LogDebug($"{msgs.Installing}: {module.GetType()}");
                     try
                     {
                         module.Install();
@@ -63,7 +63,7 @@ namespace Geranium.Modules.DefaultFunctions
                     catch (Exception e)
                     {
                         var errorMessage = $"{msgs.InstallingError} {module.GetType()}";
-                        logger?.LogError(e, errorMessage);
+                        //logger?.LogError(e, errorMessage);
 
                         module.Status = Installing.InstallStatus.Broken;
 
@@ -77,7 +77,7 @@ namespace Geranium.Modules.DefaultFunctions
                     var errorMessage = $"{msgs.InstallingError} {module.GetType()}. " +
                                        $"{msgs.DependenciesNotInstalled}: {string.Join(", ", unsatisfiedDependencies.Select(x => x.GetType()))}";
 
-                    logger?.LogError(errorMessage);
+                    //logger?.LogError(errorMessage);
 
                     if (module.SystemRequired)
                         throw new ApplicationException(errorMessage);

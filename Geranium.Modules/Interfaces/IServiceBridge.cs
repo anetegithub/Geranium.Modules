@@ -14,6 +14,8 @@ namespace Geranium.Modules.Interfaces
 
         IEnumerable<T> ResolveServices<T>();
 
+        bool Release(object instance);
+
         object ResolveService(Type type);
 
         IEnumerable<object> ResolveServices(Type type);

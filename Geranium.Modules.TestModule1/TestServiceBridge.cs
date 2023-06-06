@@ -54,6 +54,8 @@ namespace Geranium.Modules.TestModule1
             throw new NotImplementedException();
         }
 
+        public bool Release(object instance) => true;
+
         public T ResolveService<T>()
         {
             throw new NotImplementedException();

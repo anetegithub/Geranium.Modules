@@ -111,5 +111,18 @@ namespace Geranium.Modules.CastleWindsor
 
             return list;
         }
+
+        public bool Release(object instance)
+        {
+            try
+            {
+                _container.Release(instance);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

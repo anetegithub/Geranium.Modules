@@ -86,5 +86,7 @@ namespace Geranium.Modules.Implementations
         public IEnumerable<T> ResolveServices<T>() => serviceProvider.GetServices<T>();
 
         public IEnumerable<object> ResolveServices(Type type) => serviceProvider.GetServices(type);
+
+        public bool Release(object instance) => true;
     }
 }
